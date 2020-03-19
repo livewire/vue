@@ -1,7 +1,7 @@
 {
   "main": "dist/livewire-vue.js",
   "name": "livewire-vue",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/livewire/vue-support.git"
