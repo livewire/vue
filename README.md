@@ -1,5 +1,9 @@
 # Livewire VueJS Support Plugin
 
+If you are using VueJS AND Livewire on the same page, this plugin is required.
+
+Additionally, it allows you to use Vue components within your Livewire components.
+
 ## Installation
 ### CDN
 Include the CDN asset after `@livewireScripts` or  `<livewire:scripts>` in your app's HTML:
@@ -17,9 +21,9 @@ Install the package from NPM.
 npm install livewire-vue --save-dev
 ```
 
-Require the package in your bundle:
+Import the package in your bundle:
 ```
-import LivewireVue from 'livewire-vue'
+import 'livewire-vue'
 // Or.
 require('livewire-vue')
 ```
