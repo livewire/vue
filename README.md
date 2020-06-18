@@ -27,3 +27,15 @@ import 'livewire-vue'
 // Or.
 require('livewire-vue')
 ```
+
+### App.js
+Please make sure you load vue in a way required for this plugin to work as expected.
+```js
+import Vue from 'vue'
+import 'livewire-vue'
+
+window.Vue = Vue //this is important! Do not use require('vue')
+
+```
+
+
