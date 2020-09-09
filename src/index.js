@@ -19,7 +19,7 @@ window.livewire.hook('element.initialized', el => {
     if (el.__vue__) el.__livewire_ignore = true
 })
 
-window.livewire.hook('interceptWireModelSetValue', (el, value) => {
+window.livewire.hook('interceptWireModelSetValue', (value, el) => {
     // If it's a vue component pass down the value prop.
     if (! el.__vue__) return
 
