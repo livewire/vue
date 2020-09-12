@@ -4,7 +4,7 @@
   "version": "0.3.1",
   "repository": {
     "type": "git",
-    "url": "git://github.com/livewire/vue-support.git"
+    "url": "git://github.com/livewire/vue.git"
   },
   "scripts": {
     "watch": "npx rollup -c -w",
