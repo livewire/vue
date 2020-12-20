@@ -33,7 +33,7 @@ window.livewire.hook('interceptWireModelSetValue', (value, el) => {
     window.Vue.config.silent = originalSilent
 })
 
-window.livewire.hook('interceptWireModelAttachListener', (el, directive, component, debounceIf) => {
+window.livewire.hook('interceptWireModelAttachListener', (directive, el, component, debounceIf) => {
     // If it's a vue component pass down the value prop.
     if (! el.__vue__) return
 
