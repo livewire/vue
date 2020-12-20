@@ -40,6 +40,14 @@ window.livewire.hook('interceptWireModelAttachListener', (directive, el, compone
     const hasDebounceModifier = directive.modifiers.includes('debounce')
     const isLazy = directive.modifiers.includes('lazy')
 
+    if (debounceIf == undefined) {
+        debounceIf = (condition, callback, time) => {
+            return condition
+                    ? component.modelSyncDebounce(callback, time)
+                    : callback
+        }
+    }
+
     el.__vue__.$on('input', debounceIf(hasDebounceModifier || ! isLazy, e => {
         const model = directive.value
         const value = e
