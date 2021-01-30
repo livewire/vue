@@ -33,12 +33,20 @@ window.livewire.hook('interceptWireModelSetValue', (value, el) => {
     window.Vue.config.silent = originalSilent
 })
 
-window.livewire.hook('interceptWireModelAttachListener', (el, directive, component, debounceIf) => {
+window.livewire.hook('interceptWireModelAttachListener', (directive, el, component, debounceIf) => {
     // If it's a vue component pass down the value prop.
     if (! el.__vue__) return
 
     const hasDebounceModifier = directive.modifiers.includes('debounce')
     const isLazy = directive.modifiers.includes('lazy')
+
+    if (debounceIf == undefined) {
+        debounceIf = (condition, callback, time) => {
+            return condition
+                    ? component.modelSyncDebounce(callback, time)
+                    : callback
+        }
+    }
 
     el.__vue__.$on('input', debounceIf(hasDebounceModifier || ! isLazy, e => {
         const model = directive.value
