@@ -7,12 +7,12 @@ window.livewire.hook('message.received', (message, component) => {
 
     if (! message.response.effects.html) return
 
-    const div = document.createElement('div')
-    div.innerHTML =  message.response.effects.html
+    const template = document.createElement('template')
+    template.innerHTML =  message.response.effects.html
 
-    new window.Vue().$mount(div.firstElementChild)
+    new window.Vue().$mount(template.content.firstElementChild)
 
-    message.response.effects.html = div.firstElementChild.outerHTML
+    message.response.effects.html = template.content.firstElementChild.outerHTML
 })
 
 window.livewire.hook('element.initialized', el => {
